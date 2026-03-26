@@ -15,7 +15,7 @@
   <!-- HEADER -->
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html">GHI-SA</a>
+    <a class="logo" href="index1.html">GHI-SA</a>
 
     <!-- Hamburger for mobile -->
     <div class="menu-toggle" id="mobile-menu">
@@ -23,7 +23,7 @@
     </div>
 
     <nav class="nav" id="nav-links">
-      <a href="index.html">Accueil</a>
+      <a href="index1.html">Accueil</a>
       <a href="offre.html">Offres</a>
       <a href="projets.html">Projets</a>
       <a href="fonciere.html">Réserves Foncières</a>
@@ -79,27 +79,7 @@
         <img src="image/nyc.jpg" alt="New York">
         <div class="city-overlay"><h3>New York</h3></div>
       </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/florida.jpg" alt="Florida">
-        <div class="city-overlay"><h3>Florida</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/nyc.jpg" alt="New York">
-        <div class="city-overlay"><h3>New York</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/florida.jpg" alt="Florida">
-        <div class="city-overlay"><h3>Florida</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/nyc.jpg" alt="New York">
-        <div class="city-overlay"><h3>New York</h3></div>
-      </div>
-      
+       
       <div class="city-card" onclick="openBox('fonciere.html')">
         <img src="image/florida.jpg" alt="Florida">
         <div class="city-overlay"><h3>Florida</h3></div>
@@ -322,7 +302,7 @@ Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement
       <div class="footer-col">
         <h4>Liens rapides</h4>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index1.html">Accueil</a></li>
           <li><a href="offre.html">Offres</a></li>
           <li><a href="projets.html">Projets</a></li>
           <li><a href="fonciere.html">Réserves Foncières</a></li>
@@ -389,11 +369,16 @@ function closeModal() {
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
-mobileMenu.addEventListener('click', () => {
-  if(navLinks.style.display === 'flex'){
-    navLinks.style.display = 'none';
-  } else {
-    navLinks.style.display = 'flex';
+// Function to toggle mobile menu
+mobileMenu.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent click from closing immediately
+  navLinks.classList.toggle('show');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+    navLinks.classList.remove('show');
   }
 });
   </script>

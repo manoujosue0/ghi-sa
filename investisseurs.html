@@ -15,7 +15,7 @@
   <!-- HEADER -->
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html">GHI-SA</a>
+    <a class="logo" href="index1.html">GHI-SA</a>
 
     <!-- Hamburger for mobile -->
     <div class="menu-toggle" id="mobile-menu">
@@ -23,7 +23,7 @@
     </div>
 
     <nav class="nav" id="nav-links">
-      <a href="index.html">Accueil</a>
+      <a href="index1.html">Accueil</a>
       <a href="offre.html">Offres</a>
       <a href="projets.html">Projets</a>
       <a href="fonciere.html">Réserves Foncières</a>
@@ -169,11 +169,16 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
-mobileMenu.addEventListener('click', () => {
-  if (navLinks.style.display === 'flex') {
-    navLinks.style.display = 'none';
-  } else {
-    navLinks.style.display = 'flex';
+// Function to toggle mobile menu
+mobileMenu.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent click from closing immediately
+  navLinks.classList.toggle('show');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+    navLinks.classList.remove('show');
   }
 });
   </script>

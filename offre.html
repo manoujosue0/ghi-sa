@@ -96,15 +96,20 @@
   <p>© 2025 GHI-SA — Immobilier Premium</p>
 </footer>
    <script>
-  // Mobile menu toggle
+ // Mobile menu toggle
 const mobileMenu = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
-mobileMenu.addEventListener('click', () => {
-  if (navLinks.style.display === 'flex') {
-    navLinks.style.display = 'none';
-  } else {
-    navLinks.style.display = 'flex';
+// Function to toggle mobile menu
+mobileMenu.addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent click from closing immediately
+  navLinks.classList.toggle('show');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+    navLinks.classList.remove('show');
   }
 });
   </script>
