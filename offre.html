@@ -95,6 +95,18 @@
 <footer>
   <p>© 2025 GHI-SA — Immobilier Premium</p>
 </footer>
+   <script>
+  // Mobile menu toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
 
+mobileMenu.addEventListener('click', () => {
+  if (navLinks.style.display === 'flex') {
+    navLinks.style.display = 'none';
+  } else {
+    navLinks.style.display = 'flex';
+  }
+});
+  </script>
 </body>
 </html>

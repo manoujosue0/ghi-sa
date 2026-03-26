@@ -13,21 +13,27 @@
 <body>
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">GHI-SA</a>
-      <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="offre.html">Offres</a>
-        <a href="projets.html">Projets</a>
-        <a href="fonciere.html">Réserves Foncières</a>
-        <a href="careers.html">Carrières</a>
-        <a href="investisseurs.html">Investisseurs</a>
-        <a href="about.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">GHI-SA</a>
+
+    <!-- Hamburger for mobile -->
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
     </div>
-  </header>
+
+    <nav class="nav" id="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="offre.html">Offres</a>
+      <a href="projets.html">Projets</a>
+      <a href="fonciere.html">Réserves Foncières</a>
+      <a href="careers.html">Carrières</a>
+      <a href="investisseurs.html">Investisseurs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
   <!-- HERO SECTION -->
   <section class="hero" style="background:#0f172a; color:#fff; height:50vh; display:flex; flex-direction:column; justify-content:center; text-align:center;">
     <div class="container">
@@ -132,5 +138,18 @@
 
   <!-- Font Awesome for icons -->
   <script src="https://kit.fontawesome.com/a2e8d0339f.js" crossorigin="anonymous"></script>
+     <script>
+  // Mobile menu toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+mobileMenu.addEventListener('click', () => {
+  if (navLinks.style.display === 'flex') {
+    navLinks.style.display = 'none';
+  } else {
+    navLinks.style.display = 'flex';
+  }
+});
+  </script>
 </body>
 </html>
