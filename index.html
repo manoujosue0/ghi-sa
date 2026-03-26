@@ -1,385 +1,164 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GHI-SA | Développement Immobilier Durable</title>
- <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHI-SA | Leader Immobilier</title>
 
-  
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.hero button {
+  padding: 12px 25px;
+  background: #1f4e8c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 10%;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.stat h2 {
+  color: #1f4e8c;
+}
+
+/* PROJECTS */
+.projects {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CTA */
+.cta {
+  background: #1f4e8c;
+  color: white;
+  text-align: center;
+}
+
+.cta button {
+  padding: 12px 25px;
+  background: white;
+  color: #1f4e8c;
+  border: none;
+  cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">GHI-SA</a>
-      <nav class="nav">
-        <a href="index.html">Accueil</a>
-        <a href="offre.html">Offres</a>
-        <a href="projets.html">Projets</a>
-        <a href="fonciere.html">Réserves Foncières</a>
-        <a href="careers.html">Carrières</a>
-        <a href="investisseurs.html">Investisseurs</a>
-        <a href="about.html">À propos</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Construisons l’avenir de l’immobilier</h1>
+    <p>GHI-SA, acteur majeur du développement urbain en Côte d’Ivoire</p>
+    <button onclick="window.location.href='login.html'">Découvrir nos biens</button>
+  </div>
+</section>
 
-
-  <!-- HERO avec vidéo -->
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="video/The Power and Beauty of Construction Sites A Cinematic Reel.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo HTML5.
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Construisons l’avenir ensemble</h1>
-      <p>GHI-SA développe des logements et infrastructures intégrés, accessibles à tous.</p>
-      <a class="btn" href="projets.html">Découvrir nos projets</a>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features" class="section">
-    <div class="container grid">
-      <div class="card" onclick="openBox('fonciere.html')">
-        <h3>Planification Foncière</h3>
-        <p>Sécurisation et organisation des terrains pour un développement optimal.</p>
-      </div>
-      <div class="card" onclick="openBox('approved-projects.html')">
-        <h3>Projets Approuvés</h3>
-        <p>Nos projets immobiliers respectent toutes les normes et réglementations locales.</p>
-      </div>
-      <div class="card" onclick="openBox('experts.html')">
-        <h3>Experts en Construction</h3>
-        <p>Une équipe de professionnels qualifiés pour la réalisation des logements et infrastructures.</p>
-      </div>
-    </div>
-  </section>
-  
+<!-- ABOUT -->
 <section>
-  <div class="cities-container">
-    <div class="cities-grid">
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/california.jpeg" alt="California">
-        <div class="city-overlay"><h3>California</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/nyc.jpg" alt="New York">
-        <div class="city-overlay"><h3>New York</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/florida.jpg" alt="Florida">
-        <div class="city-overlay"><h3>Florida</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/nyc.jpg" alt="New York">
-        <div class="city-overlay"><h3>New York</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/florida.jpg" alt="Florida">
-        <div class="city-overlay"><h3>Florida</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/nyc.jpg" alt="New York">
-        <div class="city-overlay"><h3>New York</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/florida.jpg" alt="Florida">
-        <div class="city-overlay"><h3>Florida</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/texas.jpg" alt="Texas">
-        <div class="city-overlay"><h3>Texas</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/france.jpg" alt="France">
-        <div class="city-overlay"><h3>France</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/london.avif" alt="United Kingdom">
-        <div class="city-overlay"><h3>United Kingdom</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/italy.avif" alt="Italy">
-        <div class="city-overlay"><h3>Italy</h3></div>
-      </div>
-      
-      <div class="city-card" onclick="openBox('fonciere.html')">
-        <img src="image/germany.webp" alt="Germany">
-        <div class="city-overlay"><h3>Germany</h3></div>
-      </div>
-    </div>
-  </div>
+  <h2>À propos de GHI-SA</h2>
+  <p>
+    Depuis 1997, GHI-SA développe des projets immobiliers modernes, 
+    durables et accessibles pour accompagner la croissance urbaine.
+  </p>
 </section>
-<!-- MODAL POPUP -->
-<div id="popupBox" class="popup-box">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closeBox()">×</span>
-    <iframe id="popupFrame" src="" frameborder="0"></iframe>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat">
+    <h2>25+</h2>
+    <p>Années d'expérience</p>
   </div>
-</div>
-<script>
-  function openBox(url) {
-    const popup = document.getElementById('popupBox');
-    const frame = document.getElementById('popupFrame');
-    frame.src = url;
-    popup.style.display = 'flex';
-  }
-
-  function closeBox() {
-    const popup = document.getElementById('popupBox');
-    const frame = document.getElementById('popupFrame');
-    frame.src = '';
-    popup.style.display = 'none';
-  }
-</script>
-
-
-<section id="about" class="section alt">
-  <div class="container">
-    <h2>À propos de GHI-SA</h2>
-    <p>Depuis 1997, GHI-SA conçoit et réalise des logements et infrastructures intégrés, accessibles à tous, pour contribuer au développement urbain et économique de la Côte d’Ivoire.
-
-Notre programme phare, « LA RENAISSANCE », prévoit la construction de 100 000 logements, allant des habitats économiques aux villas de luxe, avec des infrastructures complètes et durables.
-
-Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement de qualité.</p>
+  <div class="stat">
+    <h2>10,000+</h2>
+    <p>Logements construits</p>
+  </div>
+  <div class="stat">
+    <h2>50+</h2>
+    <p>Projets réalisés</p>
   </div>
 </section>
 
-<!-- Overlay and central box -->
-<div id="overlay" onclick="closeBox()"></div>
-<div id="centerBox">
-  <span id="closeBtn" onclick="closeBox()">X</span>
-  <div id="boxContent"></div>
-</div>
+<!-- PROJECTS -->
+<section>
+  <h2>Nos Projets</h2>
 
-<!-- FEATURED PROPERTIES -->
-  <section id="featured-properties" class="section">
-    <h2 class="section-title">Featured Properties</h2>
-    <div class="properties-grid container">
-      <div class="property-card">
-        <img src="image/us appartment.jpg" alt="Luxury Apartment in London">
-        <div class="property-info">
-          <h3>Luxury Apartment in London</h3>
-          <p>$4,500 / month</p>
-          <span>3 Beds • 2 Baths • 260 m²</span>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="image/us appartment.jpg" alt="Chic Flat in Paris">
-        <div class="property-info">
-          <h3>Chic Flat in Paris</h3>
-          <p>$3,800 / month</p>
-          <span>2 Beds • 2 Baths • 200 m²</span>
-        </div>
-      </div>
-      <div class="property-card">
-        <img src="image/miami beach appartments.jpg" alt="Exclusive Villa in Dubai">
-        <div class="property-info">
-          <h3>Exclusive Villa in Dubai</h3>
-          <p>$6,200 / month</p>
-          <span>5 Beds • 5 Baths • 450 m²</span>
-        </div>
-      </div>
+  <div class="projects">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+      <h3>Résidence Luxe</h3>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="section alt">
-    <h2 class="section-title">Comment GHI-SA travaille</h2>
-    <div class="container grid">
-      <div class="step">
-        <h3>1. Acquisition des terrains</h3>
-        <p>Nous sécurisons les terrains et établissons les droits fonciers avec les propriétaires locaux.</p>
-      </div>
-      <div class="step">
-        <h3>2. Planification et aménagement</h3>
-        <p>Organisation des réserves foncières et conception des quartiers intégrés avec infrastructures.</p>
-      </div>
-      <div class="step">
-        <h3>3. Construction et livraison</h3>
-        <p>Réalisation des logements et infrastructures, puis livraison aux populations et investisseurs.</p>
-      </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+      <h3>Lotissement Moderne</h3>
     </div>
-  </section>
-<section class="casanova-info-section">
-  <div class="container">
-    <div class="info-grid">
 
-      <div class="info-card">
-        <div class="info-img">
-          <img src="divers/projet en cour.jpeg" alt="Projets en cours">
-          <span class="info-tag blue">PROJETS</span>
-        </div>
-        <div class="info-body">
-          <h3>Projets en cours</h3>
-          <p>GHI-SA poursuit le développement de projets immobiliers d’envergure à Akeikoi et à Daloa, afin de bâtir des logements durables pour les communautés de demain.</p>
-          <a href="projets.html">DÉCOUVRIR LES PROJETS →</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-img">
-          <img src="divers/dev.jpg" alt="Innovation et Développement">
-          <span class="info-tag green">INNOVATION</span>
-        </div>
-        <div class="info-body">
-          <h3>Innovation et Développement</h3>
-          <p>Nos équipes conçoivent des solutions innovantes pour moderniser les méthodes de construction et améliorer la qualité de vie dans tous les projets GHI-SA.</p>
-          <a href="fonciere.html">EN SAVOIR PLUS →</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-img">
-          <img src="divers/nos partenaire.png" alt="Nos Partenaires">
-          <span class="info-tag darkgreen">COLLABORATION</span>
-        </div>
-        <div class="info-body">
-          <h3>Nos Partenaires</h3>
-          <p>Grâce à Masicholding, GHI-SA collabore avec des partenaires locaux et internationaux pour assurer une croissance immobilière durable et responsable.</p>
-          <a href="investisseurs.html">VOIR LES PARTENAIRES →</a>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-img">
-          <img src="divers/Contact-us_Header_1920px.webp" alt="Contact GHI-SA">
-          <span class="info-tag pink">Offre</span>
-        </div>
-        <div class="info-body">
-          <h3>Offre de GHI-SA</h3>
-          <p>Des questions ou des propositions ? Contactez notre équipe de direction pour en savoir plus sur les opportunités d’investissement ou de collaboration.</p>
-          <a href="offre.html">EN SAVOIR PLUS →</a>
-        </div>
-      </div>
-
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
+      <h3>Villas Premium</h3>
     </div>
   </div>
 </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials" class="section">
-    <h2 class="section-title">Témoignages</h2>
-    <div class="testimonials-grid container">
-      <div class="testimonial">
-        <p>« Grâce à GHI-SA, nous avons trouvé un logement moderne et sécurisé. Un projet parfaitement réalisé ! »</p>
-        <h4>— Famille K., Abidjan</h4>
-      </div>
-      <div class="testimonial">
-        <p>« Les infrastructures et la planification urbaine sont impeccables. Nous recommandons GHI-SA. »</p>
-        <h4>— Investisseur B., Yamoussoukro</h4>
-      </div>
-      <div class="testimonial">
-        <p>« Un promoteur sérieux qui respecte les délais et la qualité des constructions. »</p>
-        <h4>— Mme D., Bouaké</h4>
-      </div>
-    </div>
-  </section>
+<!-- CTA -->
+<section class="cta">
+  <h2>Investissez avec nous</h2>
+  <p>Rejoignez les investisseurs qui font confiance à GHI-SA</p>
+  <button onclick="window.location.href='contact.html'">Nous contacter</button>
+</section>
 
-  <!-- CTA -->
-  <section id="cta" class="cta-section">
-    <h2>Prêt à découvrir nos projets ?</h2>
-    <p>Contactez GHI-SA dès aujourd’hui et explorez nos logements et réserves foncières partous dans le monde.</p>
-    <a href="contact.html" class="btn large">Contactez-nous</a>
-  </section>
+<!-- FOOTER -->
+<footer style="text-align:center; padding:20px;">
+  <p>© 2025 GHI-SA — Tous droits réservés</p>
+</footer>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <!-- Column 1: About -->
-      <div class="footer-col">
-        <h3>GHI-SA</h3>
-        <p>Promoteur immobilier et aménageur foncier depuis 1997, GHI-SA construit des logements et infrastructures pour le développement urbain de la Côte d’Ivoire.</p>
-        <div class="social-links">
-          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <!-- Column 2: Quick Links -->
-      <div class="footer-col">
-        <h4>Liens rapides</h4>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="offre.html">Offres</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="fonciere.html">Réserves Foncières</a></li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <!-- Column 3: Resources -->
-      <div class="footer-col">
-        <h4>Ressources</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Centre d’aide</a></li>
-          <li><a href="#">Conditions d’utilisation</a></li>
-          <li><a href="#">Politique de confidentialité</a></li>
-        </ul>
-      </div>
-      <!-- Column 4: Contact -->
-      <div class="footer-col">
-        <h4>Contactez-nous</h4>
-        <p><strong>Email:</strong> contact@ghi-sa.ci</p>
-        <p><strong>Téléphone:</strong> +225 07 08 00 77 28</p>
-        <p><strong>Adresse:</strong> Abidjan, Côte d’Ivoire</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© <span id="year"></span> GHI-SA — Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function openBox(url) {
-      fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('boxContent').innerHTML = html;
-          document.getElementById('overlay').style.display = 'block';
-          document.getElementById('centerBox').style.display = 'block';
-        })
-        .catch(err => console.error('Error loading content:', err));
-    }
-
-    function closeBox() {
-      document.getElementById('overlay').style.display = 'none';
-      document.getElementById('centerBox').style.display = 'none';
-      document.getElementById('boxContent').innerHTML = '';
-    }
-    function openModal() {
-  document.getElementById("overlay").style.display = "block";
-  document.getElementById("centerBox").style.display = "block";
-  document.body.classList.add("modal-open"); // 🔥 key fix
-}
-
-function closeModal() {
-  document.getElementById("overlay").style.display = "none";
-  document.getElementById("centerBox").style.display = "none";
-  document.body.classList.remove("modal-open"); // 🔥 key fix
-}
-  </script>
 </body>
 </html>
