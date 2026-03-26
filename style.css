@@ -648,162 +648,6 @@ button[type="submit"]:hover {
     padding: 3rem 1.5rem;
   }
 }
-
-/* ===========================
-   TRUSTED AGENTS PAGE
-=========================== */
-#agents .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.6rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.agent-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.agent-card:hover img {
-  transform: scale(1.05);
-}
-
-.agent-card .card-body {
-  padding: 16px;
-}
-
-.agent-card h3 {
-  margin: 0;
-  font-size: 1.15rem;
-}
-
-.agent-card .muted {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.card-footer {
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.card-footer .btn,
-.card-footer .small-btn {
-  font-size: 0.9rem;
-  padding: 6px 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.card-footer .small-btn {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-}
-
-.card-footer .small-btn:hover {
-  background: #174074;
-}
-
-/* Modal styles for agent profile */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-.modal.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 600px;
-  width: 90%;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--accent);
-}
-
-.modal-content img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-.modal-body h3 {
-  margin: 0.5rem 0;
-}
-
-.modal-body p {
-  color: #555;
-  line-height: 1.6;
-}
-
-.modal-body a.btn {
-  margin-top: 12px;
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-.modal-body a.btn:hover {
-  background: #174074;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  #agents .grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-  .agent-card img {
-    height: 200px;
-  }
-}
-@media (max-width: 480px) {
-  #agents .grid {
-    grid-template-columns: 1fr;
-  }
-  .agent-card img {
-    height: 180px;
-  }
-}
 /* ==========================
    Section Réserves Foncières
 ========================== */
@@ -882,21 +726,44 @@ button[type="submit"]:hover {
   z-index: 999;
 }
 
+/* 🔥 FIXED MODAL (same structure, better UX) */
 #centerBox {
   position: fixed;
+
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 800px;
+
+  width: 92%; /* 🔥 slightly bigger */
+  max-width: 750px; /* 🔥 better balance (not too small, not huge) */
+
+  max-height: 85vh; /* 🔥 more space */
+  overflow-y: auto;
+
   background: #fff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+
   display: none;
   z-index: 1000;
 }
 
+/* 🔥 HIDE SCROLLBAR BUT KEEP SCROLL */
+#centerBox::-webkit-scrollbar {
+  width: 0px;
+}
+
+#centerBox {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 🔥 LOCK BACKGROUND SCROLL */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Close button */
 #closeBtn {
   position: absolute;
   top: 15px;
@@ -907,6 +774,11 @@ button[type="submit"]:hover {
   color: #0a4d3a;
 }
 
+#closeBtn:hover {
+  color: red;
+}
+
+/* Content */
 #boxContent {
   margin-top: 20px;
   text-align: left;
@@ -1277,3 +1149,4 @@ input:focus, textarea:focus {
     grid-template-columns: 1fr;
   }
 }
+

@@ -4,21 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GHI-SA | Développement Immobilier Durable</title>
-
-  <!-- Meta Description for SEO -->
-  <meta name="description" content="GHI-SA, filiale immobilière de Masicholding, développe des projets de construction innovants et durables en Côte d'Ivoire. Découvrez nos projets à Akeikoi et Daloa.">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-
-  <!-- CSS -->
+ <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Google Fonts (optionnel mais plus pro) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- JS -->
-  <script src="/script.js" defer></script>
+  
 </head>
 <body>
 
@@ -28,6 +18,7 @@
       <a class="logo" href="index.html">GHI-SA</a>
       <nav class="nav">
         <a href="index.html">Accueil</a>
+        <a href="offre.html">Offres</a>
         <a href="projets.html">Projets</a>
         <a href="fonciere.html">Réserves Foncières</a>
         <a href="careers.html">Carrières</a>
@@ -239,7 +230,7 @@ Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement
         <div class="info-body">
           <h3>Projets en cours</h3>
           <p>GHI-SA poursuit le développement de projets immobiliers d’envergure à Akeikoi et à Daloa, afin de bâtir des logements durables pour les communautés de demain.</p>
-          <a href="#">DÉCOUVRIR LES PROJETS →</a>
+          <a href="projets.html">DÉCOUVRIR LES PROJETS →</a>
         </div>
       </div>
 
@@ -251,7 +242,7 @@ Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement
         <div class="info-body">
           <h3>Innovation et Développement</h3>
           <p>Nos équipes conçoivent des solutions innovantes pour moderniser les méthodes de construction et améliorer la qualité de vie dans tous les projets GHI-SA.</p>
-          <a href="#">EN SAVOIR PLUS →</a>
+          <a href="fonciere.html">EN SAVOIR PLUS →</a>
         </div>
       </div>
 
@@ -263,7 +254,7 @@ Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement
         <div class="info-body">
           <h3>Nos Partenaires</h3>
           <p>Grâce à Masicholding, GHI-SA collabore avec des partenaires locaux et internationaux pour assurer une croissance immobilière durable et responsable.</p>
-          <a href="#">VOIR LES PARTENAIRES →</a>
+          <a href="investisseurs.html">VOIR LES PARTENAIRES →</a>
         </div>
       </div>
 
@@ -327,6 +318,7 @@ Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement
         <h4>Liens rapides</h4>
         <ul>
           <li><a href="index.html">Accueil</a></li>
+          <li><a href="offre.html">Offres</a></li>
           <li><a href="projets.html">Projets</a></li>
           <li><a href="fonciere.html">Réserves Foncières</a></li>
           <li><a href="about.html">À propos</a></li>
@@ -377,6 +369,17 @@ Notre vision : bâtir un avenir où chaque Ivoirien peut accéder à un logement
       document.getElementById('centerBox').style.display = 'none';
       document.getElementById('boxContent').innerHTML = '';
     }
+    function openModal() {
+  document.getElementById("overlay").style.display = "block";
+  document.getElementById("centerBox").style.display = "block";
+  document.body.classList.add("modal-open"); // 🔥 key fix
+}
+
+function closeModal() {
+  document.getElementById("overlay").style.display = "none";
+  document.getElementById("centerBox").style.display = "none";
+  document.body.classList.remove("modal-open"); // 🔥 key fix
+}
   </script>
 </body>
 </html>
