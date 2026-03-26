@@ -1,59 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form | GHI-SA</title>
-
-    <link rel="stylesheet" href="style2.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | GHI-SA</title>
+  <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="wrapper">
-        <form id="loginForm">
-            <h1>Login</h1>
+  <div class="wrapper">
+    <form id="loginForm">
+      <h1>Connexion</h1>
 
-            <div class="input-box">
-                <input type="text" id="username" placeholder="Username" required>
-                <i class='bx bxs-user'></i>
-            </div>
+      <div class="input-box">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+      </div>
 
-            <div class="input-box">
-                <input type="password" id="password" placeholder="Password" required>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
+      <div class="input-box">
+        <input type="password" id="loginPassword" placeholder="Password" required>
+      </div>
 
-            <div class="remember-forgot">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="forgot.html">Forgot password?</a>
-            </div>
+      <button type="submit" class="btn">Se connecter</button>
 
-            <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Pas encore de compte ? <a href="register.html">Register</a></p>
+      </div>
+    </form>
+  </div>
 
-            <div class="register-link">
-                <p>Don't have an account? <a href="register.html">Register</a></p>
-            </div>
-        </form>
-    </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
 
-<script>
-    // Login user
-    document.getElementById('loginForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // prevent form from submitting normally
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
 
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
-        const user = JSON.parse(localStorage.getItem('user'));
+      const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
 
-        if(user && username === user.username && password === user.password){
-            localStorage.setItem('avatar', user.avatar || 'default-avatar.png');
-            // Redirect to index.html
-            window.location.href = 'index1.html';
-        } else {
-            alert('Nom d’utilisateur ou mot de passe incorrect.');
-        }
+      if(!passwordRegex.test(password)){
+        alert('Mot de passe invalide');
+        return;
+      }
+
+      if(username && password){
+        // Redirect to dashboard
+        window.location.href = 'index1.html';
+      } else {
+        alert('Veuillez remplir tous les champs');
+      }
     });
-</script>
+  </script>
 </body>
 </html>

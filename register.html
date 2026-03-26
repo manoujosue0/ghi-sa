@@ -1,85 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | GHI-SA</title>
-
-    <link rel="stylesheet" href="style2.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | GHI-SA</title>
+  <link rel="stylesheet" href="style2.css">
 </head>
-
 <body>
-    <div class="wrapper">
-        <form id="registerForm">
-            <h1>Register</h1>
+  <div class="wrapper">
+    <form id="registerForm">
+      <h1>Créer un compte</h1>
 
-            <div class="input-box">
-                <input type="text" id="fullName" placeholder="Full Name" required>
-                <i class='bx bxs-user'></i>
-            </div>
+      <div class="input-box">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+      </div>
 
-            <div class="input-box">
-                <input type="email" id="email" placeholder="Email" required>
-                <i class='bx bxs-envelope'></i>
-            </div>
+      <div class="input-box">
+        <input type="email" id="email" placeholder="Email" required>
+      </div>
 
-            <div class="input-box">
-                <input type="text" id="regUsername" placeholder="Username" required>
-                <i class='bx bxs-user-account'></i>
-            </div>
+      <div class="input-box">
+        <input type="text" id="regUsername" placeholder="Username" required>
+      </div>
 
-            <div class="input-box">
-                <input type="password" id="regPassword" placeholder="Password" required>
-                <i class='bx bxs-lock-alt'></i>
-            </div>
+      <div class="input-box">
+        <input type="password" id="regPassword" placeholder="Password" required>
+      </div>
 
-            <div class="input-box">
-                <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
-                <i class='bx bxs-lock'></i>
-            </div>
+      <div class="input-box">
+        <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+      </div>
 
-            <div class="remember-forgot">
-                <label><input type="checkbox" required> I agree to the terms</label>
-            </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox" required> I agree to the terms</label>
+      </div>
 
-            <button type="submit" class="btn">Register</button>
+      <button type="submit" class="btn">Register</button>
 
-            <div class="register-link">
-                <p>Already have an account? <a href="login.html">Login</a></p>
-            </div>
-        </form>
-    </div>
- 
-<script>
-  // Handle registration form submit
-  document.getElementById('registerForm').addEventListener('submit', function(e){
+      <div class="register-link">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const username = document.getElementById('regUsername').value.trim();
-      const password = document.getElementById('regPassword').value.trim();
-      const confirmPassword = document.getElementById('regConfirmPassword').value.trim();
-      const avatar = 'default-avatar.png'; // you can add avatar input if needed
+      const username = document.getElementById('regUsername').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
 
-      if(!username || !password || !confirmPassword){
-          alert('Veuillez remplir tous les champs.');
-          return;
+      // Password must be 8+ characters, 1 number, 1 special symbol
+      const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]).{8,}$/;
+
+      if(!passwordRegex.test(password)){
+        alert('Mot de passe invalide');
+        return;
       }
 
       if(password !== confirmPassword){
-          alert('Les mots de passe ne correspondent pas.');
-          return;
+        alert('Les mots de passe ne correspondent pas');
+        return;
       }
 
-      const user = { username, password, avatar };
-      localStorage.setItem('user', JSON.stringify(user));
-
-      alert('Compte créé avec succès ! Vous pouvez maintenant vous connecter.');
-      // redirect to login page
-      window.location.href = 'login.html';
-  });
-</script>
-
+      if(username && email && password){
+        alert('Inscription réussie ! Veuillez vous connecter.');
+        window.location.href = 'login.html';
+      } else {
+        alert('Veuillez remplir tous les champs');
+      }
+    });
+  </script>
 </body>
 </html>
